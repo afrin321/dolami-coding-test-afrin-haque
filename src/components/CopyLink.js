@@ -48,8 +48,7 @@ function CopyLink(props) {
             }}
             onClick={() => {
               navigator.clipboard.writeText(
-                "https://afrin321.github.io/dolami-coding-test-afrin-haque/" +
-                  "/products/" +
+                "https://afrin321.github.io/dolami-coding-test-afrin-haque/products/" +
                   productName
               );
             }}
