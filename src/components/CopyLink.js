@@ -9,8 +9,6 @@ function CopyLink(props) {
     0,
     props.productName.length - 4
   );
-  const location = useLocation();
-  console.log(location.pathname);
 
   return (
     <>
@@ -51,7 +49,9 @@ function CopyLink(props) {
             }}
             onClick={() => {
               navigator.clipboard.writeText(
-                "localhost:3000/products/" + productName
+                "https://afrin321.github.io/dolami-coding-test-afrin-haque/" +
+                  "/products/" +
+                  productName
               );
             }}
           >
