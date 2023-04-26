@@ -1,6 +1,7 @@
 import React from "react";
 import Overlay from "react-bootstrap/Overlay";
 import Copylink from "../images/icons/copy-link.png";
+import { useLocation } from "react-router-dom";
 
 function CopyLink(props) {
   const target = React.useRef(null);
@@ -8,6 +9,8 @@ function CopyLink(props) {
     0,
     props.productName.length - 4
   );
+  const location = useLocation();
+  console.log(location.pathname);
 
   return (
     <>
