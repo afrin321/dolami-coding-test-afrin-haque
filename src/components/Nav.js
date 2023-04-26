@@ -8,7 +8,9 @@ function Nav() {
     <div className="nav">
       <img src={Logo} className="logo" />
       <div className="link">
-        <a href="/">Go to Marketpage</a>
+        <a href="https://afrin321.github.io/dolami-coding-test-afrin-haque/">
+          Go to Marketpage
+        </a>
       </div>
       <div className="search-bar">
         <input type="text" className="input-search" placeholder="Search" />
