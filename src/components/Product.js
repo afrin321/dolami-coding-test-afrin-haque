@@ -43,7 +43,8 @@ function Product(props) {
         className="avatar-image"
       />
       <div className="product-title">
-        {props.product.name} “Avatown” -nice original avatar of Avatown
+        {props.product.name.substring(0, props.product.name.length - 4)}{" "}
+        “Avatown” -nice original avatar of Avatown
       </div>
       <div className="products-des">
         <div className="">

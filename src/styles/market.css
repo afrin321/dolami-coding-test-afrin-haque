@@ -153,6 +153,11 @@ h4 {
     margin-top: 4px;
 }
 
+.product-owner-name:hover {
+    text-decoration: underline;
+    text-decoration-color: #6A6A6A;
+}
+
 .product-owner-avatar {
     width: 26px;
     height: 26px;

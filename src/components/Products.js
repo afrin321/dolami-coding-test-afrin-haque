@@ -6,7 +6,6 @@ import { products as allProducts } from "../products";
 function Products(props) {
   const [products] = React.useState(allProducts);
   const [filtered, setFiltered] = React.useState([]);
-  const [currentProduct, setCurrentProduct] = React.useState("");
   const options = [
     "Price: Low to High",
     "Price: High to Low",
@@ -15,8 +14,6 @@ function Products(props) {
     "Polygon:Low to High",
     "Polygon:High to Low",
   ];
-
-  const getCurrentProduct = () => currentProduct;
 
   React.useEffect(() => {
     if (products && products.length) {
@@ -27,14 +24,7 @@ function Products(props) {
           .filter(
             (p, i) => i >= getFirst(props.page) && i < getLast(props.page)
           )
-          .map((item) => (
-            <Product
-              product={item}
-              key={item.name}
-              setCurrentProduct={setCurrentProduct}
-              currentProduct={getCurrentProduct}
-            />
-          ));
+          .map((item) => <Product product={item} key={item.name} />);
         setFiltered(humanBasedFilters);
       } else {
         setFiltered((prev) =>
@@ -42,14 +32,7 @@ function Products(props) {
             .filter(
               (p, i) => i >= getFirst(props.page) && i < getLast(props.page)
             )
-            .map((item) => (
-              <Product
-                product={item}
-                setCurrentProduct={setCurrentProduct}
-                currentProduct={getCurrentProduct}
-                key={item.name}
-              />
-            ))
+            .map((item) => <Product product={item} key={item.name} />)
         );
       }
     } else {

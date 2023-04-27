@@ -24,10 +24,11 @@ function CopyLink(props) {
       >
         ▢
       </span>
+
       <Overlay
         target={target.current}
         show={props.show && currentProduct == props.productName}
-        placement="right"
+        placement="top"
       >
         {({
           placement: _placement,
@@ -47,6 +48,7 @@ function CopyLink(props) {
               border: "solid 1px #6A6A6A",
               borderRadius: 3,
               zIndex: 3,
+              marginBottom: "15px",
               ...props.style,
             }}
             onClick={() => {
