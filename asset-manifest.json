@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dolami-coding-test-afrin-haque/static/css/main.bceb7af7.css",
-    "main.js": "/dolami-coding-test-afrin-haque/static/js/main.c8e3eb5a.js",
+    "main.css": "/dolami-coding-test-afrin-haque/static/css/main.c2cda844.css",
+    "main.js": "/dolami-coding-test-afrin-haque/static/js/main.d005b2ec.js",
     "static/js/787.26d05696.chunk.js": "/dolami-coding-test-afrin-haque/static/js/787.26d05696.chunk.js",
     "static/media/VRC image S(F).png": "/dolami-coding-test-afrin-haque/static/media/VRC image S(F).d9699e31eb83f7c88812.png",
     "static/media/VRC image R(F).png": "/dolami-coding-test-afrin-haque/static/media/VRC image R(F).acbb43947493e1483c12.png",
@@ -30,12 +30,12 @@
     "static/media/location.png": "/dolami-coding-test-afrin-haque/static/media/location.4ba2450b71e973e57b09.png",
     "static/media/logo_avatown_manual_1_basi_inverse.png": "/dolami-coding-test-afrin-haque/static/media/logo_avatown_manual_1_basi_inverse.bc29d574a24db24cbe5b.png",
     "index.html": "/dolami-coding-test-afrin-haque/index.html",
-    "main.bceb7af7.css.map": "/dolami-coding-test-afrin-haque/static/css/main.bceb7af7.css.map",
-    "main.c8e3eb5a.js.map": "/dolami-coding-test-afrin-haque/static/js/main.c8e3eb5a.js.map",
+    "main.c2cda844.css.map": "/dolami-coding-test-afrin-haque/static/css/main.c2cda844.css.map",
+    "main.d005b2ec.js.map": "/dolami-coding-test-afrin-haque/static/js/main.d005b2ec.js.map",
     "787.26d05696.chunk.js.map": "/dolami-coding-test-afrin-haque/static/js/787.26d05696.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bceb7af7.css",
-    "static/js/main.c8e3eb5a.js"
+    "static/css/main.c2cda844.css",
+    "static/js/main.d005b2ec.js"
   ]
 }
