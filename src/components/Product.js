@@ -2,7 +2,7 @@ import React from "react";
 import CopyLink from "./CopyLink";
 import Owner from "../images/Avatar_Pictures/VRC image A(F).png";
 import Cart from "../images/icons/cart.png";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updateCurrentProduct } from "../store/actions";
 
 function Product(props) {
