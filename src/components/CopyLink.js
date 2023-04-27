@@ -51,7 +51,7 @@ function CopyLink(props) {
             }}
             onClick={() => {
               navigator.clipboard.writeText(
-                "localhost:3000/dolami-coding-test-afrin-haque/products/" +
+                "https://afrin321.github.io/dolami-coding-test-afrin-haque/products/" +
                   productName
               );
               console.log(props.productName, props.currentProduct);
