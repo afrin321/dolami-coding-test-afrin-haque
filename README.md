@@ -18,6 +18,8 @@ src
 
 Over here, please replace "https://afrin321.github.io/dolami-coding-test-afrin-haque/products/" by "localhost:[port]" where port will be the port number on which the React app is running.
 
+2) When copying product link of each avatar, clicking on the "Copy link" tooltip copies the link to the clipboard.
+
 Part of the site can be seen on https://afrin321.github.io/dolami-coding-test-afrin-haque/
 
 Thank you for visiting!
