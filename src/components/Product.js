@@ -2,13 +2,37 @@ import React from "react";
 import CopyLink from "./CopyLink";
 import Owner from "../images/Avatar_Pictures/VRC image A(F).png";
 import Cart from "../images/icons/cart.png";
+import { useDispatch, useSelector } from "react-redux";
+import { updateCurrentProduct } from "../store/actions";
 
 function Product(props) {
   const [toggleHeart, setToggleHeart] = React.useState(false);
   const [show, setShow] = React.useState(false);
+  const dispatch = useDispatch();
 
   return (
-    <div className="products-item">
+    <div
+      className="products-item"
+      onClick={(event) => {
+        if (
+          event.target.id !== "copy-link-tooltip" ||
+          event.target.id !== "ic-first" ||
+          event.target.id !== "ic-second"
+        ) {
+          setShow(false);
+        }
+
+        if (event.target.id == "ic-first" || event.target.id == "ic-second") {
+          show ? setShow(false) : setShow(true);
+        }
+
+        if (event.target.id === "copy-link-tooltip") {
+          setShow(true);
+        }
+
+        dispatch(updateCurrentProduct(props.product.name));
+      }}
+    >
       <button className="add-button">
         <img src={Cart} className="cart-icon" />
         <span>Add</span>

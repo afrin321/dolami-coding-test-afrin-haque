@@ -24,6 +24,7 @@ function Filter(props) {
     "△70,000 & Above",
   ]);
   const [autoUploadSupport] = React.useState(["Supported", "Unsupported"]);
+  const [gender, setGender] = React.useState("");
   const stylesDisplayAvatar = {
     display: toggleFullAvater ? "block" : "none",
   };
@@ -32,8 +33,12 @@ function Filter(props) {
     display: toggleHumanBased ? "block" : "none",
   };
 
-  const stylesUnderline = {
+  const stylesUnderlineFullAvatar = {
     textDecoration: toggleFullAvater ? "underline" : "none",
+  };
+
+  const stylesUnderlineHumanBased = {
+    textDecoration: toggleHumanBased ? "underline" : "none",
   };
 
   return (
@@ -47,14 +52,16 @@ function Filter(props) {
               ...prev,
               title: toggleFullAvater ? "All Items" : "Full Avatar",
             }));
+            setGender("");
           }}
-          style={stylesUnderline}
+          style={stylesUnderlineFullAvatar}
         >
           Full avatar
         </span>
         <div style={stylesDisplayAvatar}>
           <div className="indented">
             <span
+              style={stylesUnderlineHumanBased}
               onClick={() => {
                 setToggleHumanBased((prev) => !prev);
                 props.updateFilters((prev) => ({
@@ -62,6 +69,7 @@ function Filter(props) {
                   humanBased: "",
                   title: toggleFullAvater ? "Full Avatar  >  Human Based" : "",
                 }));
+                setGender("");
               }}
             >
               Human Based
@@ -69,37 +77,49 @@ function Filter(props) {
             <div style={stylesDisplayHuman}>
               <p
                 className="indented"
-                onClick={() =>
+                onClick={() => {
                   props.updateFilters((prev) => ({
                     ...prev,
                     humanBased: "M",
                     title: "Full Avatar  >  Human Based  >  Male",
-                  }))
-                }
+                  }));
+                  setGender("M");
+                }}
+                style={{
+                  textDecoration: gender === "M" ? "underline" : "none",
+                }}
               >
                 Male
               </p>
               <p
                 className="indented"
-                onClick={() =>
+                onClick={() => {
                   props.updateFilters((prev) => ({
                     ...prev,
                     humanBased: "F",
                     title: "Full Avatar  >  Human Based  >  Female",
-                  }))
-                }
+                  }));
+                  setGender("F");
+                }}
+                style={{
+                  textDecoration: gender === "F" ? "underline" : "none",
+                }}
               >
                 Female
               </p>
               <p
                 className="indented"
-                onClick={() =>
+                onClick={() => {
                   props.updateFilters((prev) => ({
                     ...prev,
                     humanBased: null,
                     title: "Full Avatar  >  Human Based  >  Unisex",
-                  }))
-                }
+                  }));
+                  setGender("U");
+                }}
+                style={{
+                  textDecoration: gender === "U" ? "underline" : "none",
+                }}
               >
                 Unisex
               </p>
@@ -116,6 +136,8 @@ function Filter(props) {
       {contents.map((content) => (
         <label id={content} className="indented">
           <input type="checkbox" for={content} name="content" /> {content}
+          {content === "VRChat(Quest)" && <span className="green">⬤</span>}
+          {content === "VRChat(PCVR)" && <span className="blue">⬤</span>}
         </label>
       ))}
 

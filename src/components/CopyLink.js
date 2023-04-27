@@ -1,6 +1,7 @@
 import React from "react";
 import Overlay from "react-bootstrap/Overlay";
 import Copylink from "../images/icons/copy-link.png";
+import { useSelector } from "react-redux";
 
 function CopyLink(props) {
   const target = React.useRef(null);
@@ -8,24 +9,26 @@ function CopyLink(props) {
     0,
     props.productName.length - 4
   );
+  const currentProduct = useSelector((state) => state.reducer.currentProduct);
 
   return (
     <>
-      <span
-        className="upload-icon first"
-        ref={target}
-        onClick={() => props.setShow(!props.show)}
-      >
+      <span className="upload-icon first" ref={target} id="ic-first">
         🠕
       </span>
       <span
         className="upload-icon second"
         ref={target}
         onClick={() => props.setShow(!props.show)}
+        id="ic-second"
       >
         ▢
       </span>
-      <Overlay target={target.current} show={props.show} placement="right">
+      <Overlay
+        target={target.current}
+        show={props.show && currentProduct == props.productName}
+        placement="right"
+      >
         {({
           placement: _placement,
           arrowProps: _arrowProps,
@@ -43,7 +46,7 @@ function CopyLink(props) {
               color: "#6A6A6A",
               border: "solid 1px #6A6A6A",
               borderRadius: 3,
-              zIndex: 10,
+              zIndex: 3,
               ...props.style,
             }}
             onClick={() => {
@@ -51,7 +54,9 @@ function CopyLink(props) {
                 "https://afrin321.github.io/dolami-coding-test-afrin-haque/products/" +
                   productName
               );
+              console.log(props.productName, props.currentProduct);
             }}
+            id="copy-link-tooltip"
           >
             <img src={Copylink} />
             Copy Link
