@@ -5,8 +5,8 @@ Instructions:
 1. When Running the file locally, please change the following:
 
 path:
-src
-components
+src/
+components/
 CopyLink.js (Line: 51, .....
 
     onClick={() => {
